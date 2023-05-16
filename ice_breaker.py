@@ -13,7 +13,7 @@ if __name__ == "__main__":
     2. two interesting facts about the person
     """
 
-    linkedin_profile_url = linkedin_lookup_agent(name="Eden Marco")
+    linkedin_profile_url = linkedin_lookup_agent(name="Eden Marco Udemy")
 
     # create prompy template
     summary_prompt_template = PromptTemplate(
