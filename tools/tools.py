@@ -1,5 +1,6 @@
 from langchain.serpapi import SerpAPIWrapper
 
+
 # new class that inherits from original wrapper
 # allows us to override the _process_response method
 class CustomSerpAPIWrapper(SerpAPIWrapper):
@@ -31,11 +32,14 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
         ):
             toret = res["knowledge_graph"]["description"]
         elif "snippet" in res["organic_results"][0].keys():
-            toret = res["organic_results"][0]["link"]  # we want the link, not the snippet
+            toret = res["organic_results"][0][
+                "link"
+            ]  # we want the link, not the snippet
 
         else:
             toret = "No good search result found"
         return toret
+
 
 def get_profile_url(text: str) -> str:
     """Searches for Linkedin profile page"""
